@@ -5,8 +5,9 @@
 
 import ./nodejs.nix (args // rec {
   version = "5.12.0";
+  extraConfigFlags = [ "--with-intl=small-icu --download=all" ];
   src = fetchurl {
     url = "http://nodejs.org/dist/v${version}/node-v${version}.tar.xz";
-    sha256 = "4f926373f11f2a25156eee1804ec012eb912c42e5d34fc2909889da22efdadfe";
+    sha256 = "1zmdzlpa57c814lzqd2x5v215f9f07n0867fdqajaahzy5rn74jg";
   };
 })

@@ -1,5 +1,6 @@
 { stdenv, fetchurl, openssl, python, zlib, libuv, v8, utillinux, http-parser
 , pkgconfig, runCommand, which, libtool
+, icu
 , callPackage
 }@args:
 

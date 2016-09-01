@@ -1,5 +1,6 @@
 { stdenv, fetchurl, openssl, python, zlib, libuv, v8, utillinux, http-parser
 , pkgconfig, runCommand, which, libtool
+, icu
 , version
 , sha256 ? null
 , src ? fetchurl { url = "https://nodejs.org/download/release/v${version}/node-v${version}.tar.xz"; inherit sha256; }
@@ -14,7 +15,7 @@ assert stdenv.system != "armv5tel-linux";
 let
 
   deps = {
-    inherit openssl zlib libuv;
+    inherit openssl zlib libuv icu;
   } // (stdenv.lib.optionalAttrs (!stdenv.isDarwin) {
     inherit http-parser;
   });

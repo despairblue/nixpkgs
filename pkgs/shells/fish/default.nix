@@ -8,13 +8,13 @@ with stdenv.lib;
 
 stdenv.mkDerivation rec {
   name = "fish-${version}";
-  version = "2.3.1";
+  version = "2.4.0";
 
   patches = [ ./etc_config.patch ];
 
   src = fetchurl {
     url = "http://fishshell.com/files/${version}/${name}.tar.gz";
-    sha256 = "0r46p64lg6da3v6chsa4gisvl04kd3rpy60yih8r870kbp9wm2ij";
+    sha256 = "1iggr6ah0siyak073v2w4sx1man19q8jsxns8i09qhv06crb5fq6";
   };
 
   buildInputs = [ ncurses libiconv pcre2 ];
